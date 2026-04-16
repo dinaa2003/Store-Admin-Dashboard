@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Jewelry Admin - Add Product</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="add-product.css" />
+ 
+</head>
+<body>
+  <div class="dashboard-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-regular fa-gem"></i>
+          </div>
+          <div>
+            <h2>Aura</h2>
+            <span>Jewelry Admin</span>
+          </div>
+        </div>
+
+        <button class="mobile-close" id="closeSidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="product.html" class="nav-link">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products</span>
+        </a>
+
+        <a href="add-product.html" class="nav-link active">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Product</span>
+        </a>
+
+        <a href="users.html" class="nav-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Users</span>
+        </a>
+
+        <a href="orders.html" class="nav-link">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Orders</span>
+        </a>
+
+        <a href="setting.html" class="nav-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="promo-card">
+          <p>Create elegant new products for your jewelry collection ✨</p>
+          <button>Open Studio</button>
+        </div>
+
+        <a href="#" class="logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div>
+            <p class="page-label">Collection Management</p>
+            <h1>Add Product</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search here..." />
+          </div>
+
+          <button class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+
+          <div class="profile-box">
+            <img
+              src="Images/Dina.jpeg"
+              alt="profile"
+            />
+            <div>
+              <h4>Dina</h4>
+              <span>Store Manager</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero -->
+      <section class="add-hero card">
+        <div>
+          <span class="small-badge">✨ Product Studio</span>
+          <h2>Add a New Jewelry Product</h2>
+          <p>
+            Create a polished new item with image preview, validation, and a clean luxury layout.
+          </p>
+        </div>
+      </section>
+
+      <!-- Success Message -->
+      <div class="success-message hidden" id="successMessage">
+        <i class="fa-solid fa-circle-check"></i>
+        Product added successfully
+      </div>
+
+      <!-- Form Layout -->
+      <section class="add-layout">
+        <!-- Left -->
+        <div class="form-panel card">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Details</p>
+              <h3>Product Information</h3>
+            </div>
+          </div>
+
+          <form id="productForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" placeholder="Enter product name" />
+                <small class="error-text" id="nameError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category">
+                  <option value="">Select category</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Silver">Silver</option>
+                  <option value="Diamond">Diamond</option>
+                  <option value="Pearl">Pearl</option>
+                </select>
+                <small class="error-text" id="categoryError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="collection">Collection</label>
+                <input type="text" id="collection" placeholder="Luxury Collection" />
+                <small class="error-text" id="collectionError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" placeholder="500" />
+                <small class="error-text" id="priceError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" placeholder="10" />
+                <small class="error-text" id="stockError"></small>
+              </div>
+
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="">Select status</option>
+                  <option value="Available">Available</option>
+                  <option value="Out of Stock">Out of Stock</option>
+                </select>
+                <small class="error-text" id="statusError"></small>
+              </div>
+
+              <div class="form-group full">
+                <label for="description">Description</label>
+                <textarea id="description" rows="5" placeholder="Write a short elegant description..."></textarea>
+                <small class="error-text" id="descriptionError"></small>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="secondary-btn" id="resetBtn">Reset</button>
+              <button type="submit" class="primary-btn">Add Product</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right -->
+        <div class="side-panel">
+          <div class="upload-panel card">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Media</p>
+                <h3>Upload Product Image</h3>
+              </div>
+            </div>
+
+            <label for="imageUpload" class="upload-box" id="uploadBox">
+              <input type="file" id="imageUpload" accept="image/*" hidden />
+              <div class="upload-inner">
+                <i class="fa-regular fa-image"></i>
+                <h4>Upload Image</h4>
+                <p>Click to choose an image</p>
+              </div>
+            </label>
+            <small class="error-text" id="imageError"></small>
+          </div>
+
+          <div class="preview-panel card">
+            <div class="section-head">
+              <div>
+                <p class="section-label">Preview</p>
+                <h3>Live Product Preview</h3>
+              </div>
+            </div>
+
+            <div class="preview-card">
+              <div class="preview-image-wrap">
+                <img id="previewImage" src="https://via.placeholder.com/500x500/f6f2fa/8d79b8?text=Preview" alt="preview" />
+                <span class="preview-status" id="previewStatus">Available</span>
+              </div>
+
+              <div class="preview-body">
+                <span class="preview-category" id="previewCollection">Luxury Collection</span>
+                <h4 id="previewName">Diamond Ring</h4>
+                <p id="previewDescription">A graceful jewelry piece preview will appear here as you type.</p>
+
+                <div class="preview-meta">
+                  <div class="preview-price" id="previewPrice">$500</div>
+                  <div class="preview-stock" id="previewStock">Stock 10</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="add-product.js"></script>
+</body>
+</html>

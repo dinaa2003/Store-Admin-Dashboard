@@ -1,0 +1,193 @@
+
+/* =========================
+   SOFT MODE - CLEAN FINAL
+   ========================= */
+
+/* Page background */
+body,
+.main-content {
+  background: #fafafc !important;
+}
+
+/* Main cards and panels */
+.card,
+.users-table-wrap,
+.orders-table-wrap,
+.products-table-wrap,
+.products-toolbar,
+.users-toolbar,
+.orders-toolbar,
+.form-panel,
+.upload-panel,
+.preview-panel,
+.order-card,
+.user-stat,
+.order-stat,
+.product-stat {
+  background: #ffffff !important;
+  border: 1px solid #e6e1ee !important;
+  box-shadow: 0 10px 24px rgba(31, 24, 46, 0.06) !important;
+}
+
+/* Hero / banner sections */
+.products-hero,
+.users-hero,
+.orders-hero,
+.add-hero,
+.welcome-banner {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfbfe 100%) !important;
+  border: 1px solid #ece8f3 !important;
+  box-shadow: 0 8px 22px rgba(31, 24, 46, 0.04) !important;
+}
+
+/* Search / inputs / selects */
+.page-search,
+.search-box,
+.users-toolbar select,
+.products-toolbar select,
+.orders-toolbar select,
+input,
+select,
+textarea {
+  background: #ffffff !important;
+  border: 1px solid #e9e5f1 !important;
+  box-shadow: none !important;
+}
+
+/* Small top badges */
+.small-badge {
+  background: #f4f0fa !important;
+  color: #7f72a8 !important;
+  border: 1px solid #ebe5f4 !important;
+}
+
+/* Primary buttons */
+.primary-btn {
+  box-shadow: 0 10px 24px rgba(141, 121, 184, 0.22) !important;
+}
+
+.primary-btn:hover {
+  box-shadow: 0 12px 26px rgba(141, 121, 184, 0.26) !important;
+}
+
+/* Secondary / quiet buttons */
+.view-details-btn,
+.secondary-btn,
+.pagination-btn,
+.page-number,
+.actions-toggle,
+.expand-btn {
+  background: #ffffff !important;
+  border: 1px solid #ebe6f3 !important;
+  box-shadow: none !important;
+}
+
+/* Filter chips */
+.chip {
+  background: #ffffff !important;
+  border: 1px solid #ebe6f3 !important;
+}
+
+.chip.active {
+  background: #f2ecfa !important;
+  color: #7f72a8 !important;
+  border-color: #e6def4 !important;
+}
+
+/* Stat icon boxes */
+.stat-icon {
+  box-shadow: none !important;
+  opacity: 0.92;
+}
+
+/* Status pills */
+.status-badge,
+.order-status,
+.role-badge,
+.product-status {
+  box-shadow: none !important;
+}
+
+/* Table rows hover */
+.users-table tbody tr:hover,
+.products-table tbody tr:hover {
+  background: #fcfbfe !important;
+}
+
+/* Order progress */
+.order-progress-bar {
+  background: #f1edf7 !important;
+}
+
+.order-progress-fill {
+  opacity: 1 !important;
+}
+
+/* Upload area */
+.upload-box {
+  background: #fcfbfe !important;
+  border-color: #ddd5ea !important;
+  box-shadow: none !important;
+}
+
+.upload-box:hover {
+  background: #faf8fd !important;
+  border-color: rgba(141, 121, 184, 0.38) !important;
+  box-shadow: 0 8px 18px rgba(141, 121, 184, 0.08) !important;
+}
+
+/* Preview card */
+.preview-card {
+  background: #ffffff !important;
+  border-color: #ece8f3 !important;
+}
+
+/* Headings فقط */
+h1,
+h2,
+h3 {
+  color: #2d2438 !important;
+}
+
+/* Sidebar fix */
+.sidebar {
+  color: #ffffff !important;
+}
+
+.sidebar .brand h2,
+.sidebar .brand span,
+.sidebar .nav-link span,
+.sidebar .promo-card p,
+.sidebar .logout-btn span,
+.sidebar .logout-btn i,
+.sidebar .nav-link i,
+.sidebar .brand-icon i {
+  color: rgba(255, 255, 255, 0.92) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.sidebar .nav-link.active span,
+.sidebar .nav-link.active i,
+.sidebar .nav-link:hover span,
+.sidebar .nav-link:hover i {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.sidebar .brand h2 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.sidebar .promo-card button {
+  color: #5f537f !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #5f537f !important;
+}
+.primary-btn {
+  background: #8d79b8 !important;
+  color: #ffffff !important;
+  border: none !important;
+}

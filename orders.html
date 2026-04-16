@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Jewelry Admin - Orders</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="orders.css" />
+ 
+</head>
+<body>
+  <div class="dashboard-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-regular fa-gem"></i>
+          </div>
+          <div>
+            <h2>Aura</h2>
+            <span>Jewelry Admin</span>
+          </div>
+        </div>
+
+        <button class="mobile-close" id="closeSidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="products.html" class="nav-link">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products</span>
+        </a>
+
+        <a href="add-product.html" class="nav-link">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Product</span>
+        </a>
+
+        <a href="users.html" class="nav-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Users</span>
+        </a>
+
+        <a href="orders.html" class="nav-link active">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Orders</span>
+        </a>
+
+        <a href="setting.html" class="nav-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="promo-card">
+          <p>Track every order with a soft and professional workflow ✨</p>
+          <button>Order Insights</button>
+        </div>
+
+        <a href="#" class="logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div>
+            <p class="page-label">Order Management</p>
+            <h1>Orders</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search here..." />
+          </div>
+
+          <button class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+
+          <div class="profile-box">
+            <img
+              src="Images/Dina.jpeg"
+              alt="profile"
+            />
+            <div>
+              <h4>Dina</h4>
+              <span>Store Manager</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="orders-hero card">
+        <div>
+          <span class="small-badge">✨ Order Flow</span>
+          <h2>Manage Customer Orders</h2>
+          <p>
+            Track progress, monitor shipping, and review order details with a polished and modern card layout.
+          </p>
+        </div>
+
+        <a href="#" class="primary-btn orders-hero-btn">
+          <i class="fa-solid fa-file-export"></i>
+          Export Orders
+        </a>
+      </section>
+
+      <section class="orders-stats">
+        <div class="order-stat card">
+          <div class="stat-icon lavender">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <div class="stat-info">
+            <p>Total Orders</p>
+            <h3 id="totalOrdersCount">8</h3>
+            <span>All recent orders</span>
+          </div>
+        </div>
+
+        <div class="order-stat card">
+          <div class="stat-icon peach">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div class="stat-info">
+            <p>Pending</p>
+            <h3 id="pendingOrdersCount">2</h3>
+            <span>Awaiting processing</span>
+          </div>
+        </div>
+
+        <div class="order-stat card">
+          <div class="stat-icon lilac">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div class="stat-info">
+            <p>Shipped</p>
+            <h3 id="shippedOrdersCount">2</h3>
+            <span>On the way</span>
+          </div>
+        </div>
+
+        <div class="order-stat card">
+          <div class="stat-icon pink">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="stat-info">
+            <p>Delivered</p>
+            <h3 id="deliveredOrdersCount">3</h3>
+            <span>Completed successfully</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="orders-toolbar card">
+        <div class="toolbar-left">
+          <div class="page-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="orderSearchInput" placeholder="Search by order ID or customer..." />
+          </div>
+        </div>
+
+        <div class="toolbar-right">
+          <div class="status-chips" id="statusChips">
+            <button class="chip active" data-status="all">All</button>
+            <button class="chip" data-status="pending">Pending</button>
+            <button class="chip" data-status="processing">Processing</button>
+            <button class="chip" data-status="shipped">Shipped</button>
+            <button class="chip" data-status="delivered">Delivered</button>
+            <button class="chip" data-status="cancelled">Cancelled</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="orders-list" id="ordersList"></section>
+
+      <section class="empty-state card hidden" id="emptyState">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>No orders found</h3>
+        <p>Try changing the search or filter options.</p>
+      </section>
+
+      <section class="pagination-wrap card">
+        <button class="pagination-btn" id="prevBtn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="pagination-numbers" id="paginationNumbers"></div>
+
+        <button class="pagination-btn" id="nextBtn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <script src="orders.js"></script>
+</body>
+</html>

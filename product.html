@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Jewelry Admin - Products</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="product.css" />
+ 
+</head>
+<body>
+  <div class="dashboard-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-regular fa-gem"></i>
+          </div>
+          <div>
+            <h2>Aura</h2>
+            <span>Jewelry Admin</span>
+          </div>
+        </div>
+
+        <button class="mobile-close" id="closeSidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="product.html" class="nav-link active">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products</span>
+        </a>
+
+        <a href="add-product.html" class="nav-link">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Product</span>
+        </a>
+
+        <a href="users.html" class="nav-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Users</span>
+        </a>
+
+        <a href="orders.html" class="nav-link">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Orders</span>
+        </a>
+
+        <a href="setting.html" class="nav-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="promo-card">
+          <p>Soft luxury dashboard for your jewelry store ✨</p>
+          <button>Upgrade View</button>
+        </div>
+
+        <a href="#" class="logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div>
+            <p class="page-label">Collection Management</p>
+            <h1>Products</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box top-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search here..." />
+          </div>
+
+          <button class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+
+          <div class="profile-box">
+            <img
+              src="Images/Dina.jpeg"
+              alt="profile"
+            />
+            <div>
+              <h4>Dina</h4>
+              <span>Store Manager</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Header -->
+      <section class="products-hero card">
+        <div class="products-hero-text">
+          <span class="small-badge">💎 Jewelry Collection</span>
+          <h2>Manage Your Products</h2>
+          <p>
+            Search, filter, edit, and organize your jewelry collection in a clean and elegant way.
+          </p>
+        </div>
+
+        <button class="primary-btn add-btn" onclick="window.location.href='add-product.html'">
+          <i class="fa-solid fa-plus"></i>
+          Add Product
+        </button>
+      </section>
+
+      <!-- Filters -->
+      <section class="products-toolbar card">
+        <div class="toolbar-left">
+          <div class="page-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search by product name..." />
+          </div>
+        </div>
+
+        <div class="toolbar-right">
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="diamond">Diamond</option>
+            <option value="pearl">Pearl</option>
+          </select>
+
+          <select id="statusFilter">
+            <option value="all">All Status</option>
+            <option value="available">Available</option>
+            <option value="out of stock">Out of Stock</option>
+          </select>
+
+          <select id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="under500">Under $500</option>
+            <option value="500to1500">$500 - $1500</option>
+            <option value="above1500">Above $1500</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Products Grid -->
+     <div class="products-table-wrap">
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody id="productsTableBody"></tbody>
+  </table>
+</div>
+
+      <!-- Empty State -->
+      <section class="empty-state card hidden" id="emptyState">
+        <i class="fa-regular fa-gem"></i>
+        <h3>No products found</h3>
+        <p>Try changing the search or filter options.</p>
+      </section>
+
+      <!-- Pagination -->
+      <section class="pagination-wrap card">
+        <button class="pagination-btn" id="prevBtn">
+          <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        <div class="pagination-numbers" id="paginationNumbers"></div>
+
+        <button class="pagination-btn" id="nextBtn">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+      </section>
+      
+      <div class="image-preview" id="imagePreview">
+  <span class="close-preview">&times;</span>
+  <img id="previewImg" src="">
+</div>
+    </main>
+  </div>
+  <div class="edit-modal" id="editModal">
+  <div class="edit-box">
+
+    <h2>Edit Product</h2>
+
+    <input type="text" id="editName" placeholder="Product Name">
+    <input type="number" id="editPrice" placeholder="Price">
+    <textarea id="editDesc" placeholder="Description"></textarea>
+
+    <div class="modal-actions">
+      <button class="secondary-btn" onclick="closeEdit()">Cancel</button>
+      <button class="primary-btn" onclick="saveEdit()">Save</button>
+    </div>
+
+  </div>
+</div>
+
+  <script src="product.js"></script>
+</body>
+</html>

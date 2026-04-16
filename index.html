@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Jewelry Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+ 
+</head>
+<body>
+  <div class="dashboard-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand">
+          <div class="brand-icon">
+            <i class="fa-regular fa-gem"></i>
+          </div>
+          <div>
+            <h2>Aura</h2>
+            <span>Jewelry Admin</span>
+          </div>
+        </div>
+
+        <button class="mobile-close" id="closeSidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-link active">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="product.html" class="nav-link">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products</span>
+        </a>
+
+        <a href="add-product.html" class="nav-link">
+          <i class="fa-solid fa-plus"></i>
+          <span>Add Product</span>
+        </a>
+
+        <a href="users.html" class="nav-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Users</span>
+        </a>
+
+        <a href="orders.html" class="nav-link">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Orders</span>
+        </a>
+
+        <a href="setting.html" class="nav-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="promo-card">
+          <p>Soft luxury dashboard for your jewelry store ✨</p>
+          <button>Upgrade View</button>
+        </div>
+
+        <a href="#" class="logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <main class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div>
+            <p class="page-label">Overview</p>
+            <h1>Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search here..." />
+          </div>
+
+          <button class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+
+          <div class="profile-box">
+            <img
+              src="Images/Dina.jpeg"
+              alt="profile"
+            />
+            <div>
+              <h4>Dina</h4>
+              <span>Store Manager</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Welcome Banner -->
+      <section class="welcome-banner card">
+        <div class="welcome-text">
+          <span class="small-badge">✨ Soft Luxury Dashboard</span>
+          <h2>Welcome back, Dina</h2>
+          <p>
+            Your jewelry store is glowing today. Track performance, orders,
+            and best-selling collections in one elegant place.
+          </p>
+
+          <div class="welcome-actions">
+            <button class="primary-btn">View Reports</button>
+            <button class="secondary-btn">This Month</button>
+          </div>
+        </div>
+
+        <div class="welcome-shape">
+          <div class="shape-circle one"></div>
+          <div class="shape-circle two"></div>
+          <div class="shape-diamond">
+            <i class="fa-regular fa-gem"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats-grid">
+        <div class="stat-card card">
+          <div class="stat-icon lavender">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <div class="stat-info">
+            <p>Total Revenue</p>
+            <h3>$24,580</h3>
+            <span>+12.4% this month</span>
+          </div>
+        </div>
+
+        <div class="stat-card card">
+          <div class="stat-icon pink">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="stat-info">
+            <p>Total Orders</p>
+            <h3>200</h3>
+            <span>+8.1% this week</span>
+          </div>
+        </div>
+
+        <div class="stat-card card">
+          <div class="stat-icon peach">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div class="stat-info">
+            <p>Customers</p>
+            <h3>1,400</h3>
+            <span>+5.3% new clients</span>
+          </div>
+        </div>
+
+        <div class="stat-card card">
+          <div class="stat-icon lilac">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <div class="stat-info">
+            <p>Products</p>
+            <h3>500</h3>
+            <span>14 added this week</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section class="charts-grid">
+        <div class="chart-card card large-chart">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Analytics</p>
+              <h3>Monthly Jewelry Sales</h3>
+            </div>
+            <button class="mini-btn">2026</button>
+          </div>
+          <canvas id="salesChart"></canvas>
+        </div>
+
+        <div class="chart-card card small-chart">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Distribution</p>
+              <h3>Product Categories</h3>
+            </div>
+          </div>
+
+          <div class="donut-wrap">
+            <canvas id="categoryChart"></canvas>
+
+            <div class="category-list">
+              <div class="category-item">
+                <span class="dot gold"></span>
+                <p>Gold</p>
+                <strong>42%</strong>
+              </div>
+
+              <div class="category-item">
+                <span class="dot silver"></span>
+                <p>Silver</p>
+                <strong>28%</strong>
+              </div>
+
+              <div class="category-item">
+                <span class="dot diamond"></span>
+                <p>Diamond</p>
+                <strong>18%</strong>
+              </div>
+
+              <div class="category-item">
+                <span class="dot pearl"></span>
+                <p>Pearl</p>
+                <strong>12%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom widgets -->
+      <section class="bottom-grid">
+        <div class="orders-card card">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Orders</p>
+              <h3>Recent Orders</h3>
+            </div>
+            <button class="mini-btn">View All</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Product</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1021</td>
+                  <td>Ashraf Ali</td>
+                  <td>Diamond Ring</td>
+                  <td><span class="status delivered">Delivered</span></td>
+                  <td>$5000</td>
+                </tr>
+                <tr>
+                  <td>#1022</td>
+                  <td>Lina Noor</td>
+                  <td>Silver Necklace</td>
+                  <td><span class="status pending">Pending</span></td>
+                  <td>$220</td>
+                </tr>
+                <tr>
+                  <td>#1023</td>
+                  <td>Huda Sami</td>
+                  <td>Gold Bracelet</td>
+                  <td><span class="status delivered">Delivered</span></td>
+                  <td>$390</td>
+                </tr>
+                <tr>
+                  <td>#1024</td>
+                  <td>Yara Nabil</td>
+                  <td>Pearl Earrings</td>
+                  <td><span class="status cancelled">Cancelled</span></td>
+                  <td>$145</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sellers-card card">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Highlights</p>
+              <h3>Best Sellers</h3>
+            </div>
+          </div>
+
+          <div class="seller-list">
+            <div class="seller-item">
+              <img src=Images/DimondR.jpg alt="ring" />
+              <div>
+                <h4>Diamond Ring</h4>
+                <p>Luxury Collection</p>
+              </div>
+              <strong>$5000</strong>
+            </div>
+
+            <div class="seller-item">
+              <img src= Images/GoldB.jpg alt="bracelet" />
+              <div>
+                <h4>Gold Bracelet</h4>
+                <p>Classic Collection</p>
+              </div>
+              <strong>$390</strong>
+            </div>
+
+            <div class="seller-item">
+              <img src= Images/pearlE.jpg alt="earrings" />
+              <div>
+                <h4>Pearl Earrings</h4>
+                <p>Soft Shine</p>
+              </div>
+              <strong>$145</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
